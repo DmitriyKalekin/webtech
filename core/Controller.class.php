@@ -12,5 +12,10 @@ class Controller
     echo "Impossible entrance";
   }
   
+  public function index()
+  {
+    echo "Index method of ".get_class($this);
+  }
+  
 }
 ?>
