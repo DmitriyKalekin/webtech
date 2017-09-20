@@ -1,5 +1,5 @@
- CREATE DATABASE quest DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
-
+CREATE DATABASE quest DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+USE quest;
 
 --
 -- Структура таблицы `users`
