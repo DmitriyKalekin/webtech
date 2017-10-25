@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang=en> 
+  <head> 
+    <meta charset=utf-8 />
+    <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+      .red {
+        border: 1px solid #ff0000;
+        
+      }
+    </style>
+    
+     <script type="text/javascript">
+      
+       function appendTable(d)
+       {
+         
+           //console.log(d["items"]);
+             
+    for (var i = 0; i<d["items"].length; i++)    
+    {
+      tr = document.createElement('tr');
+      td1 = document.createElement('td');
+      td1.innerHTML = i;
+      
+      td2 = document.createElement('td');
+           td2.innerHTML = d["items"][i]["name"];
+      
+      td3 = document.createElement('td');
+          td3.innerHTML = d["items"][i]["date"];
+      
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      
+      
+        $( "#id_table" ).append(tr);    
+    }
+  
+  }
+       
+       
+       
+       
+       function load_users()
+        {
+           $.ajax({
+             cache: false,
+             url: "https://php-herrhorror775553.codeanyapp.com/response.json"
+           }).done(function (d){
+             
+        //var parsed = JSON.parse(d);
+             appendTable(d);
+             
+        console.log(d);
+           }).fail(function( jqXHR, textStatus ) {
+  alert( "Request failed: " + textStatus );
+});       
+           
+        }
+    </script>
+    
+  </head>
+  <body>
+
+    <button id="id_button" class="red" >
+      Press me!
+    </button>
+    
+    <div id="results" class="red">
+    </div>
+    
+    
+     <div class="container-fluid">
+      <div class="row">
+        
+        <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>title</th>
+                  <th>date</th>
+                </tr>
+              </thead>
+              <tbody id="id_table">
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+
+                </tr>
+               
+              </tbody>
+            </table>
+        </div>
+        
+        
+       </div>
+    </div>
+    
+    
+        
+    
+    
+    
+    <script type="text/javascript">
+     
+      
+      $( document ).ready(function(){
+        
+        //document.getElementById('id_button').innerHTML = 'Zzzz';
+        
+        // XPath
+        // $('#id_button').html('New content');
+        // $('#id_button').append('Opa!');
+        
+        // xPath
+        $('button.red')[0].append('Opa!');
+        
+         var btn = document.getElementById('id_button');
+         btn.addEventListener('click', function(){
+          alert('event1');
+        });
+        
+        
+        btn.addEventListener('click', function(){
+          alert('event2');
+        });
+        
+        $('#id_button').bind('click', load_users);
+     
+      });
+              
+         </script>
+    
+    
+  </body>
+</html>
