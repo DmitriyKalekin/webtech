@@ -7,6 +7,7 @@ ROUTING -- RESTfull API
 php __autoload()
 Pattern Factory -- для загрузки классов-контроллеров
 Pattern Singleton - для хранения текущего содединения с базой данных
+Pattern Command
 Читай: Мэтт Зандстра. PHP.Объекты, шаблоны и методики программирования.
 
 
