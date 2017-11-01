@@ -3,7 +3,7 @@ CRUD
 MVC
 
 ROUTING -- RESTfull API
-.htacess mod_rewrite
+.htaccess mod_rewrite
 php __autoload()
 Pattern Factory -- для загрузки классов-контроллеров
 Pattern Singleton - для хранения текущего содединения с базой данных
