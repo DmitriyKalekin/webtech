@@ -84,7 +84,7 @@ $data = yy(1,0.1, -0.1, 1);
 for ($i=0; $i<count($data); $i++)
 {
           
-      echo    "[".$data[$i][$t].",  ".$data[$i]["x"].",     ".$data[$i]["y"]."],";
+      echo    "[".$data[$i]["t"].",  ".$data[$i]["x"].",     ".$data[$i]["y"]."],";
 
 }          
 ?>         
